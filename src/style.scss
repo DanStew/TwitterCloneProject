@@ -1,0 +1,81 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+//Styling for the forms on the login and register pages of the website
+.formContainer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9D9D9D;
+
+    //Styling for the central form component
+    .formWrapper{
+        background-color: white;
+        padding: 20px 60px;
+        border-radius: 10px;
+        display:flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        p{
+            font-size: 18px;
+            gap: 5px;
+        }
+
+        .logo{
+            margin: 0px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color : #005c64;
+        }
+
+        .title{
+            margin: 0px;
+            font-size: 18px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+
+            input{
+                padding: 15px;
+                width : 100%;
+                border: none;
+                border-bottom: 2px solid #9D9D9D;
+                outline:none;
+            }
+
+            label{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:10px;
+                cursor: pointer;
+
+                span{font-size: 16px;}
+
+                img{width:32px;}
+            }
+
+            button{
+                width : 80%;
+                padding: 10px;
+                font-size: 16px;
+                border : none;
+                cursor: pointer;
+                background-color: #b6b6b6;
+                border-radius: 20px;
+            }
+        }
+
+    }
+}
