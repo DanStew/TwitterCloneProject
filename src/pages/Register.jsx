@@ -1,5 +1,6 @@
 //Importing the needed images into this file
 import imgIcon from '../Images/imgIcon.jpg'
+import defaultProfile from '../Images/defaultProfile.jpg'
 
 //Importing needed functions into the file
 import { useState } from 'react'
@@ -23,6 +24,10 @@ function Register(){
     async function handleSelect(e){
         //Preventing the page from automatically refreshing
         e.preventDefault()
+
+        //Implementing a default profile image
+        !(file) ? file=defaultProfile : file=file
+
         try{
             const res = await createUserWithEmailAndPassword(auth,email,password)
             console.log(res)

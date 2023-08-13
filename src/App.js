@@ -6,6 +6,8 @@ import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import UserProfile from './pages/UserProfile'
+import Search from './pages/Search.jsx'
+import Settings from './pages/Settings'
 
 //Importing the needed functions into the code
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
@@ -34,8 +36,10 @@ function App() {
           {/* Implementing the protected route onto the home page */}
           <Route index element={<ProtectedRoute ><Home /></ProtectedRoute>} />
           {/* Implementing the dynamic route path for each individual users profile */}
-          <Route path="userProfile/:displayName" element={<UserProfile />} />
-          <Route path="directMessages" element={<DirectMessage />} />
+          <Route path="user/profile/:displayName" element={<UserProfile />} />
+          <Route path="messages" element={<DirectMessage />} />
+          <Route path="search" element={<Search />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </BrowserRouter>

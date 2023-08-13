@@ -1,81 +1,244 @@
-body{
-    padding: 0px;
-    margin: 0px;
+body {
+  padding: 0px;
+  margin: 0px;
 }
 
 //Styling for the forms on the login and register pages of the website
-.formContainer{
-    height: 100vh;
+.formContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9d9d9d;
+
+  //Styling for the central form component
+  .formWrapper {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    p {
+      font-size: 18px;
+      gap: 5px;
+    }
+
+    .logo {
+      margin: 0px;
+      margin-bottom: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #005c64;
+    }
+
+    .title {
+      margin: 0px;
+      font-size: 18px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+
+      input {
+        padding: 15px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #9d9d9d;
+        outline: none;
+      }
+
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        span {
+          font-size: 16px;
+        }
+
+        img {
+          width: 32px;
+        }
+      }
+
+      button {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        background-color: #b6b6b6;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 10px;
+  overflow-y: scroll;
+}
+
+.main {
+  flex: 6 6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .post {
+    margin : auto;
+    flex: 1 1;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+
+    .mainInput {
+      margin-right: 60px;
+      flex: 20 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .inputUpper {
+        margin-top: 5px;
+        flex: 2 2;
+        width: 100%;
+
+        textarea {
+          border: none;
+          outline: none;
+          resize: none;
+          width: 99%;
+          font-size: 18px;
+
+          &::placeholder {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .inputLower {
+        flex: 1 1;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        img {
+          width: 32px;
+          cursor: pointer;
+        }
+
+        button {
+          border: none;
+          background-color: lightblue;
+          border-radius: 20px;
+          padding: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .userInfo {
+    align-self: flex-start;
+    margin: 10px;
+    flex: 1 1;
+  
+    img {
+      width: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  .messages {
+    flex: 5 5;
+    width: 100%;
+
+    .message{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 10px;
+      align-items: center;
+      border-bottom: 1px solid darkgray;
+      padding : 5px;
+
+      .mainMessage{
+        flex : 20 20;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        
+        
+        .messageUpper{
+          transition : text-decoration 500ms;
+          font-weight: bold;
+          font-size: 18px;
+          
+          &:hover {
+            text-decoration: underline;
+            cursor : pointer;
+          }
+        }
+
+        .messageLower{
+          width : 90%;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .sidebarTab {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #9D9D9D;
+    height: 15%;
+    gap: 20px;
+    cursor: pointer;
 
-    //Styling for the central form component
-    .formWrapper{
-        background-color: white;
-        padding: 20px 60px;
-        border-radius: 10px;
-        display:flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-
-        p{
-            font-size: 18px;
-            gap: 5px;
-        }
-
-        .logo{
-            margin: 0px;
-            margin-bottom: 5px;
-            font-size: 20px;
-            font-weight: bold;
-            color : #005c64;
-        }
-
-        .title{
-            margin: 0px;
-            font-size: 18px;
-        }
-
-        form{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-
-            input{
-                padding: 15px;
-                width : 100%;
-                border: none;
-                border-bottom: 2px solid #9D9D9D;
-                outline:none;
-            }
-
-            label{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap:10px;
-                cursor: pointer;
-
-                span{font-size: 16px;}
-
-                img{width:32px;}
-            }
-
-            button{
-                width : 80%;
-                padding: 10px;
-                font-size: 16px;
-                border : none;
-                cursor: pointer;
-                background-color: #b6b6b6;
-                border-radius: 20px;
-            }
-        }
-
+    &:hover {
+      background-color: rgb(200, 200, 200);
     }
+
+    img {
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 32px;
+      color: rgb(70, 70, 70);
+    }
+  }
 }
+
