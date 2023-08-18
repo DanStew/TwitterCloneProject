@@ -242,3 +242,62 @@ body {
   }
 }
 
+.search{
+  width : 100%;
+  height : 100vh;
+  display : flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap : 10px;
+
+  .searchBody{
+    flex : 6 6 ;
+    
+    .searchInput{
+      width : 100%;
+      height : 100%;
+
+      .searchUpper{
+        input{
+          padding : 20px;
+          outline : none;
+          border : none;
+          border-bottom: 1px solid lightgray;
+          width : 98%;
+          background-color : transparent;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      .searchResults{
+        .searchResult{
+          border-bottom: 1px solid lightgray;
+          display : flex;
+          align-items: center;
+          justify-content: center;
+          gap : 10px;
+          cursor: pointer;
+          padding : 20px;
+
+          &:hover {
+            background-color: rgb(200, 200, 200);
+          }
+
+          .userPhoto{
+            img{
+              width : 32px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .userInfo{
+            flex : 6 6;
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

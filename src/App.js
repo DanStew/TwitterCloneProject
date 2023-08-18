@@ -8,6 +8,7 @@ import Register from './pages/Register.jsx'
 import UserProfile from './pages/UserProfile'
 import Search from './pages/Search.jsx'
 import Settings from './pages/Settings'
+import Sidebar from './components/Sidebar'
 
 //Importing the needed functions into the code
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
