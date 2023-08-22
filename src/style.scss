@@ -99,7 +99,7 @@ body {
   flex-direction: column;
 
   .post {
-    margin : auto;
+    margin: auto;
     flex: 1 1;
     display: flex;
     width: 100%;
@@ -156,57 +156,6 @@ body {
       }
     }
   }
-
-  .userInfo {
-    align-self: flex-start;
-    margin: 10px;
-    flex: 1 1;
-  
-    img {
-      width: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-      cursor: pointer;
-    }
-  }
-
-  .messages {
-    flex: 5 5;
-    width: 100%;
-
-    .message{
-      display: flex;
-      justify-content: flex-start;
-      margin-left: 10px;
-      align-items: center;
-      border-bottom: 1px solid darkgray;
-      padding : 5px;
-
-      .mainMessage{
-        flex : 20 20;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        
-        
-        .messageUpper{
-          transition : text-decoration 500ms;
-          font-weight: bold;
-          font-size: 18px;
-          
-          &:hover {
-            text-decoration: underline;
-            cursor : pointer;
-          }
-        }
-
-        .messageLower{
-          width : 90%;
-        }
-      }
-    }
-  }
 }
 
 .sidebar {
@@ -242,61 +191,156 @@ body {
   }
 }
 
-.search{
-  width : 100%;
-  height : 100vh;
-  display : flex;
+.messages {
+  flex: 5 5;
+  width: 100%;
+
+  .message {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+    align-items: center;
+    border-bottom: 1px solid darkgray;
+    padding: 5px;
+
+    .mainMessage {
+      flex: 20 20;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .messageUpper {
+        transition: text-decoration 500ms;
+        font-weight: bold;
+        font-size: 18px;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .messageLower {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.userInfo {
+  align-self: flex-start;
+  margin: 10px;
+  flex: 1 1;
+
+  img {
+    width: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.search {
+  width: 100%;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap : 10px;
+  gap: 10px;
 
-  .searchBody{
-    flex : 6 6 ;
-    
-    .searchInput{
-      width : 100%;
-      height : 100%;
+  .searchBody {
+    flex: 6 6;
 
-      .searchUpper{
-        input{
-          padding : 20px;
-          outline : none;
-          border : none;
+    .searchInput {
+      width: 100%;
+      height: 100%;
+
+      .searchUpper {
+        input {
+          padding: 20px;
+          outline: none;
+          border: none;
           border-bottom: 1px solid lightgray;
-          width : 98%;
-          background-color : transparent;
+          width: 98%;
+          background-color: transparent;
           font-size: 18px;
           font-weight: bold;
         }
       }
 
-      .searchResults{
-        .searchResult{
+      .searchResults {
+        .searchResult {
           border-bottom: 1px solid lightgray;
-          display : flex;
+          display: flex;
           align-items: center;
           justify-content: center;
-          gap : 10px;
+          gap: 10px;
           cursor: pointer;
-          padding : 20px;
+          padding: 20px;
 
           &:hover {
             background-color: rgb(200, 200, 200);
           }
 
-          .userPhoto{
-            img{
-              width : 32px;
+          .userPhoto {
+            img {
+              width: 32px;
               border-radius: 50%;
               object-fit: cover;
             }
           }
-          .userInfo{
-            flex : 6 6;
+          .userInfo {
+            flex: 6 6;
             font-size: 18px;
             font-weight: bold;
           }
         }
+      }
+    }
+  }
+}
+
+.UserProfile{
+  display : flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x : hidden;
+
+  .sideBody{
+    height : 100vh;
+  }
+
+  .mainBody{
+    flex : 5 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .pageBody{
+      flex : 4 4;
+      width : 100%;
+    }
+
+    .pageHeader{
+      width : 100%;
+      margin : 20px;
+      gap : 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      img{
+        width : 128px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor : pointer;
+      }
+
+      span{
+        font-size: 64px;
+        font-weight: bold;
       }
     }
   }

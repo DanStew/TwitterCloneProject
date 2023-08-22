@@ -26,11 +26,10 @@ function Register(){
         e.preventDefault()
 
         //Implementing a default profile image
-        !(file) ? file=defaultProfile : file=file
+        !(file) ? setFile(defaultProfile) : setFile(file)
 
         try{
             const res = await createUserWithEmailAndPassword(auth,email,password)
-            console.log(res)
             
             //Code to store and set the users profile img
             //The second parameter here is the name of the file that you are going to store
@@ -56,11 +55,13 @@ function Register(){
                         })
 
                         //Database that stores information on all of the people that the user follows
-                        await setDoc(doc(db, "following", res.user.uid), {})
+                        await setDoc(doc(db, "following", res.user.uid), {following:[]})
                         //Database that stores information on all of the people that the user is in private chats with
-                        await setDoc(doc(db, "userContacts", res.user.uid), {})
+                        await setDoc(doc(db, "userContacts", res.user.uid), {contacts:[]})
                         //Database that stores information on all of the users posts
-                        await setDoc(doc(db, "userPosts", res.user.uid), {})
+                        await setDoc(doc(db, "userPosts", res.user.uid), {
+                            messages:[]
+                        })
                     })
                 }
             )
