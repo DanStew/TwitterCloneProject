@@ -22,6 +22,9 @@ function Messages({type}){
     //Usestate variable to store all of the messages
     const [messageInfo, setMessageInfo] = useState([])
 
+    //Usestate variable to store the array of array of messages
+    const [messageArray, setMessageArray] = useState([])
+
     //Defining the collection to be searched from
     const userPosts = collection(db, "userPosts");
 
@@ -34,7 +37,7 @@ function Messages({type}){
         if (currentUser.displayName != null){
             returnFunction()
         }
-    },[currentUser])
+    },[currentUser,displayName])
 
     //Collecting all of the users messages
     async function collectUserProfileMessages(){
@@ -53,8 +56,18 @@ function Messages({type}){
         }
     }
 
-    function collectFollowingMessages(){
+    //Collecting all of your following users messages to be displayed
+    async function collectFollowingMessages(){
+        //Finding your following collection record (to find which users you follow)
+        const followersDoc = await getDoc(doc(db,"following",currentUser.uid))
+        const followersArray = followersDoc.data().following
+        findFollowerArrays(followersArray)
+    }
 
+    async function findFollowerArrays(followersArray){
+        followersArray.forEach((doc) => {
+            collectFollowerArrays(doc)
+        })
     }
 
     async function collectMessages(user){
@@ -62,9 +75,28 @@ function Messages({type}){
         setMessageInfo(wantedDoc.data().messages)
     }
 
+    async function collectFollowerArrays(user){
+        const wantedDoc = await getDoc(doc(db,"userPosts",user.uid))
+        setMessageArray( (prev) => [...prev, wantedDoc.data().messages])
+    }
+
+    //Function to separate the messageArrays array into the same format as the MessageInfo array
+    function separateArrays(){
+        //Mapping through the arrays to get to individual messages
+        messageArray.map((doc) => {
+            doc.map((message) => {
+                setMessageInfo( (prev) => [...prev,message])
+            })
+        })
+        //Removing the messageArray, so this code isn't repeated
+        setMessageArray([])
+    }
+
     return(
         <div className="messages">
-            {messageInfo.map((doc) => {
+            {messageArray[0] && separateArrays()}
+            {/* Code to display the personal users messages to the userProfile page */}
+            {messageInfo.sort((a,b) => a.date<b.date? 1 : -1).map((doc) => {
                 return(
                     <div key={doc.id}>
                         <Message messageInfo={doc}/>

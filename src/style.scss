@@ -331,6 +331,23 @@ body {
       justify-content: flex-start;
       align-items: center;
 
+      .userInfoDiv{
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        width : 60%;
+
+        button{
+          border : none;
+          border-radius: 20%;
+          padding : 20px 40px;
+          font-size: 18px;
+          background-color : lightskyblue;
+          color : white;
+          font-weight: bold;
+        }
+      }
+
       img{
         width : 128px;
         border-radius: 50%;
@@ -342,6 +359,8 @@ body {
         font-size: 64px;
         font-weight: bold;
       }
+
+
     }
   }
 }
