@@ -37,10 +37,10 @@ function App() {
           {/* Implementing the protected route onto the home page */}
           <Route index element={<ProtectedRoute ><Home /></ProtectedRoute>} />
           {/* Implementing the dynamic route path for each individual users profile */}
-          <Route path="user/profile/:displayName" element={<UserProfile />} />
-          <Route path="messages" element={<DirectMessage />} />
-          <Route path="search" element={<Search />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="user/profile/:displayName" element={<ProtectedRoute ><UserProfile /></ProtectedRoute>} />
+          <Route path="messages" element={<ProtectedRoute ><DirectMessage /></ProtectedRoute>} />
+          <Route path="search" element={<ProtectedRoute ><Search /></ProtectedRoute>} />
+          <Route path="settings" element={<ProtectedRoute ><Settings /></ProtectedRoute>} />
         </Route>
       </Routes>
     </BrowserRouter>
