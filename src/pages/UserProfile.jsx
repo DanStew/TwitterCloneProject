@@ -50,7 +50,7 @@ function UserProfile() {
   }
 
   return (
-    <div className="UserProfile">
+    <div id="UserProfile" className="defaultPageLayout">
       <div className="sideBody">
         <Sidebar />
       </div>

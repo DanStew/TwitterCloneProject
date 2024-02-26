@@ -3,7 +3,7 @@ import SearchInput from '../components/SearchInput.jsx'
 
 function Search(){
     return(
-        <div className="search">
+        <div id="search" className="defaultPageLayout">
             <Sidebar />
             <div className='searchBody'>
                 <SearchInput />

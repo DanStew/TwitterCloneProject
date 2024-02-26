@@ -1,3 +1,4 @@
+//Removing the default padding and margin from pages
 body {
   padding: 0px;
   margin: 0px;
@@ -83,84 +84,30 @@ body {
   }
 }
 
-.home {
+//Applying some of the default styling applied to all pages of the website (except form and login)
+.defaultPageLayout{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   gap: 10px;
-  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.main {
-  flex: 6 6;
-  height: 100%;
+//Styling for the main section of the webpages
+.mainBody{
+  flex : 6 6;
   display: flex;
   flex-direction: column;
-
-  .post {
-    margin: auto;
-    flex: 1 1;
-    display: flex;
-    width: 100%;
-    border-top: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
-
-    .mainInput {
-      margin-right: 60px;
-      flex: 20 20;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      .inputUpper {
-        margin-top: 5px;
-        flex: 2 2;
-        width: 100%;
-
-        textarea {
-          border: none;
-          outline: none;
-          resize: none;
-          width: 99%;
-          font-size: 18px;
-
-          &::placeholder {
-            font-size: 18px;
-          }
-        }
-      }
-
-      .inputLower {
-        flex: 1 1;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-
-        img {
-          width: 32px;
-          cursor: pointer;
-        }
-
-        button {
-          border: none;
-          background-color: lightblue;
-          border-radius: 20px;
-          padding: 10px;
-          font-size: 16px;
-          font-weight: bold;
-          cursor: pointer;
-        }
-      }
-    }
-  }
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
+//Styling for the sidebar of the website
 .sidebar {
   flex: 1 1;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,10 +138,12 @@ body {
   }
 }
 
+//Styling for the messages displayed on the website
 .messages {
   flex: 5 5;
   width: 100%;
 
+  //Styling the main message content
   .message {
     display: flex;
     justify-content: flex-start;
@@ -228,6 +177,7 @@ body {
   }
 }
 
+//Styling the userInfo and img, attached to each message
 .userInfo {
   align-self: flex-start;
   margin: 10px;
@@ -241,13 +191,10 @@ body {
   }
 }
 
-.search {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+//Styling for the search page of the website
+#search {
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
 
   .searchBody {
     flex: 6 6;
@@ -301,66 +248,112 @@ body {
   }
 }
 
-.UserProfile{
-  display : flex;
+//Additional styling for the userProfile page of the website
+#UserProfile{
   justify-content: flex-start;
   align-items: flex-start;
-  overflow-x : hidden;
 
-  .sideBody{
-    height : 100vh;
+  .pageBody{
+    flex : 4 4;
+    width : 100%;
   }
 
-  .mainBody{
-    flex : 5 5;
+  //Making the unique, larger pageHeader for this page
+  .pageHeader{
+    width : 100%;
+    margin : 20px;
+    gap : 20px;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-
-    .pageBody{
-      flex : 4 4;
-      width : 100%;
-    }
-
-    .pageHeader{
-      width : 100%;
-      margin : 20px;
-      gap : 20px;
-      display: flex;
-      justify-content: flex-start;
+    align-items: center;
+  
+    .userInfoDiv{
+      display : flex;
+      justify-content: space-between;
       align-items: center;
-
-      .userInfoDiv{
-        display : flex;
-        justify-content: space-between;
-        align-items: center;
-        width : 60%;
-
-        button{
-          border : none;
-          border-radius: 20%;
-          padding : 20px 40px;
-          font-size: 18px;
-          background-color : lightskyblue;
-          color : white;
-          font-weight: bold;
-        }
-      }
-
-      img{
-        width : 128px;
-        border-radius: 50%;
-        object-fit: cover;
-        cursor : pointer;
-      }
-
-      span{
-        font-size: 64px;
+      width : 60%;
+  
+      button{
+        border : none;
+        border-radius: 20%;
+        padding : 20px 40px;
+        font-size: 18px;
+        background-color : lightskyblue;
+        color : white;
         font-weight: bold;
       }
+    }
+  
+    img{
+      width : 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor : pointer;
+    }
+  
+    span{
+      font-size: 64px;
+      font-weight: bold;
+    }
+  }
+}
 
+//Styling the post component of the website (allowing the user to post a message)
+.post {
+  margin: auto;
+  flex: 1 1;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
 
+  .mainInput {
+    margin-right: 60px;
+    flex: 20 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .inputUpper {
+      margin-top: 5px;
+      flex: 2 2;
+      width: 100%;
+
+      textarea {
+        border: none;
+        outline: none;
+        resize: none;
+        width: 99%;
+        font-size: 18px;
+
+        &::placeholder {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .inputLower {
+      flex: 1 1;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      img {
+        width: 32px;
+        cursor: pointer;
+      }
+
+      button {
+        border: none;
+        background-color: lightblue;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
   }
 }

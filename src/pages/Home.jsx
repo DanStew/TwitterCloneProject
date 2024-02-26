@@ -7,7 +7,7 @@ import Main from "../components/Main"
 
 function Home(){
     return(
-        <div className="home">
+        <div className="home defaultPageLayout">
             <Sidebar />
             <Main />
         </div>

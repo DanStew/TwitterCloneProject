@@ -4,8 +4,8 @@ import { auth } from "../config/firebase"
 
 function Settings(){
     return(
-        <div className="Settings">
-            <div className="sideBody">
+        <div className="settings defaultPageLayout">
+            <div className="sidebar">
                 <Sidebar />
             </div>
             <div className="mainBody">
